@@ -4,6 +4,6 @@ const posts = require("../db/db.json");
 const path = require("path");
 
 // INDEx
-module.exports.index = function(req, res) {
-    res.end("rotta admin")
+module.exports.login = function(req, res) {
+    res.end("rotta per fare il login")
 }

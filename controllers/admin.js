@@ -5,5 +5,6 @@ const path = require("path");
 
 // INDEx
 module.exports.index = function(req, res) {
-    res.end("rotta login")
+    console.log(req.user);
+    res.end(`ciao admin`)
 }

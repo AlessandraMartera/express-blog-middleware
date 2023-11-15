@@ -25,13 +25,13 @@ const routerPosts = require('./routers/posts.js');
 
 // collengamento per l'autenticazione 
 const routerAdmin = require('./routers/admin.js');
-const routerLogin = require('./routers/login.js');
+
 
 
 app.use("/posts", routerPosts);
 
-// app.use("/", routerAdmin);
-// app.use("/", routerLogin);
+app.use("/", routerAdmin);
+
 
 
 // Gestione degli errori
