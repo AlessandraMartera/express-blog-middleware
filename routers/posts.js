@@ -5,6 +5,7 @@ const posts = require("../db/db.json");
 // Collego il controller
 const postsController = require("../controllers/posts.js");
 // importo multer per poter uplodare le i file con destinazione publice/posts
+const multer = require("multer");
 const uploader = multer({dest: "public/posts"});
 
 

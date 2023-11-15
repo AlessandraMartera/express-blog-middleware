@@ -12,23 +12,25 @@ app.use(express.urlencoded({ extended: true }));
 // configuro i file statici
 app.use(express.static("public"));
 
+const errorsMiddlewares = require('./middlewares/errorsMiddlewares.js')
 const port = process.env.PORT || 3000;
 
-// controllerts
-const home = require("./controllers/home.js");
 // routes dove dentro verrà collegato il controllere dei posts
 const routerPosts = require('./routers/posts.js');
+
+// collengamento per l'autenticazione 
+const routerAdmin = require('./routers/admin.js');
+const routerLogin = require('./routers/login.js');
 
 
 app.use("/posts", routerPosts);
 
+// app.use("/", routerAdmin);
+// app.use("/", routerLogin);
 
 
-/*
-app.get('/', (req, res) => {
-    res.send('<h1>Benvenuto nel mio blog! da app.js</h1>');
-   })
-*/
+// Gestione degli errori
+app.use(errorsMiddlewares)
 app.listen(port, () => {
  console.log(`Server partito su porta http://localhost:${port}`)
 })

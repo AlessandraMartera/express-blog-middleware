@@ -5,6 +5,9 @@ const path = require("path");
 
 // INDEx
 module.exports.index = function(req, res) {
+    // throw che serve per lanciare errori e provare che le middlewares funzionino
+    // throw new Error('errore di prova middleware');
+
     res.format({
         html: () => {
             const html = [];
