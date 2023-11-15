@@ -37,6 +37,8 @@ app.use("/posts", routerPosts);
 // Gestione degli errori
 app.use(errorsMiddlewares);
 
+// se non viene trovata nessuna rotta utilizzabile allora verrà usata 
+// la middleware che dice che la pagina non è stata trova
 app.use(notFoundMiddlewares);
 
 app.listen(port, () => {
