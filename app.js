@@ -12,7 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 // configuro i file statici
 app.use(express.static("public"));
 
-const errorsMiddlewares = require('./middlewares/errorsMiddlewares.js')
+// collegamento delle middlewares
+const errorsMiddlewares = require('./middlewares/errorsMiddlewares.js');
+const notFoundMiddlewares = require('./middlewares/notFoundMiddleware.js');
+
+
+
 const port = process.env.PORT || 3000;
 
 // routes dove dentro verrà collegato il controllere dei posts
@@ -30,7 +35,10 @@ app.use("/posts", routerPosts);
 
 
 // Gestione degli errori
-app.use(errorsMiddlewares)
+app.use(errorsMiddlewares);
+
+app.use(notFoundMiddlewares);
+
 app.listen(port, () => {
  console.log(`Server partito su porta http://localhost:${port}`)
 })

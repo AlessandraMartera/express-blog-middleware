@@ -9,7 +9,6 @@ const multer = require("multer");
 const uploader = multer({dest: "public/posts"});
 
 
-
 router.get('/', postsController.index);
 
 router.get('/create', postsController.create);
